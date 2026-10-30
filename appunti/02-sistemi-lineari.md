@@ -1,6 +1,6 @@
 # Sistemi lineari
 
-Dato il sistema lineare Ax = b
+Dato il sistema lineare `Ax = b`
 
 ## 1. Risoluzione diretta con MATLAB
 
@@ -33,7 +33,7 @@ Queste operazioni richiedono che le matrici triangolari abbiano diagonale non nu
 
 ### 2.3 Fattorizzazione LU
 
-La fattorizzazione LU con pivoting parziale decompone la matrice nella forma PA=LU, dove:
+La fattorizzazione LU con pivoting parziale decompone la matrice nella forma `PA = LU`, dove:
 
 - \(P\) è una matrice di permutazione;
 - \(L\) è triangolare inferiore;
@@ -48,14 +48,14 @@ y = L\(P*b);         % risolve L*y = P*b
 x = U\y;             % risolve U*x = y
 ```
 
-**Derivazione:** da \(PA=LU\) e \(Ax=b\) si ottiene LUx=Pb.
+**Derivazione:** da `PA = LU` e `Ax = b` si ottiene `LUx = Pb`.
 
 Si risolvono quindi due sistemi triangolari consecutivi:
 
-1. \(Ly=Pb\);
-2. \(Ux=y\).
+1. `Ly = Pb`;
+2. `Ux = y`.
 
-**Quando conviene:** se si devono risolvere più sistemi con la stessa matrice \(A\) e termini noti diversi, si può riutilizzare la fattorizzazione LU.
+**Quando conviene:** se si devono risolvere più sistemi con la stessa matrice `A` e termini noti diversi, si può riutilizzare la fattorizzazione LU.
 
 ```matlab
 [L,U,P] = lu(A);
@@ -71,7 +71,7 @@ x2 = U\y2;
 
 Si applica a matrici **simmetriche definite positive** (SPD, *Symmetric Positive Definite*).
 
-Per una matrice reale SPD: A=R^T * R, dove (R) è triangolare superiore.
+Per una matrice reale SPD: `A = R^T * R`, dove `R` è triangolare superiore.
 
 In MATLAB:
 
@@ -94,7 +94,7 @@ Se la matrice non è definita positiva, `chol(A)` può restituire un errore.
 
 ## 3. Metodi iterativi
 
-I metodi iterativi generano una successione di approssimazioni x_0, x_1, x_2, ... a partire da un vettore iniziale x_0. Il procedimento si arresta quando viene soddisfatto un criterio di convergenza oppure quando viene raggiunto il numero massimo di iterazioni.
+I metodi iterativi generano una successione di approssimazioni `x_0, x_1, x_2, ...` a partire da un vettore iniziale `x_0`. Il procedimento si arresta quando viene soddisfatto un criterio di convergenza oppure quando viene raggiunto il numero massimo di iterazioni.
 
 Input:
 
